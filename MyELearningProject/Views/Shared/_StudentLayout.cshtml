@@ -1,0 +1,167 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Templates/material-lite-master/assets/images/favicon.png">
+    <title>Öğrenci Giriş Paneli</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Templates/material-lite-master/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Templates/material-lite-master/css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="~/Templates/material-lite-master/css/colors/blue.css" id="theme" rel="stylesheet">
+
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+
+    <div id="main-wrapper">
+
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+    
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                   
+                            <img src="~/Templates/material-lite-master/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+
+                            <!-- Light Logo text -->
+                            <img src="~/Templates/material-lite-master/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                        </span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                     
+                        <li class="nav-item hidden-sm-down search-box">
+                            <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                 
+                    <ul class="navbar-nav my-lg-0">
+                  
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn Doe</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Profile/Index/" aria-expanded="false"><i class="mdi-account"></i><span class="hide-menu">Profilim</span></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Profile/MyCourseList/" aria-expanded="false"><i class="mdi-view-list"></i><span class="hide-menu">Kurslarım</span></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Profile/BilgiGuncelle/" aria-expanded="false"><i class="mdi-image-filter-vintage"></i><span class="hide-menu">Bilgi Güncelle</span></a>
+                        </li>
+
+                        <li>
+                            <a class="waves-effect waves-dark" href="/Login/LogOutStudent/" aria-expanded="false"><i class="mdi-format-horizontal-align-right"></i><span class="hide-menu">Çıkış</span></a>
+                        </li>
+
+                   
+                    </ul>
+              
+                </nav>
+            
+            </div>
+    
+            <div class="sidebar-footer">
+                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
+                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
+                <!-- item--><a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            </div>
+     
+        </aside>
+
+        <div class="page-wrapper">
+  
+            <div class="container-fluid">
+ 
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-7 col-4 align-self-center">
+                        <a href="https://themewagon.com/themes/material-bootstrap-4-free-admin-template/" class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down">Download Now</a>
+                    </div>
+                </div>
+  
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-block">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+     
+            </div>
+  
+            <footer class="footer">
+                © 2017 Material Pro Admin by wrappixel.com
+            </footer>
+  
+        </div>
+      
+    </div>
+
+    <script src="~/Templates/material-lite-master/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Templates/material-lite-master/assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="~/Templates/material-lite-master/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="~/Templates/material-lite-master/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Templates/material-lite-master/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Templates/material-lite-master/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="~/Templates/material-lite-master/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Templates/material-lite-master/js/custom.min.js"></script>
+</body>
+
+</html>

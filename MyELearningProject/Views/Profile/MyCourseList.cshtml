@@ -1,0 +1,20 @@
+﻿@model List<MyELearningProject.DAL.Entities.Process>
+@{
+    ViewBag.Title = "MyCourseList";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+
+<p>Kurs Sayfası</p>
+@{
+    int count = 0;
+}
+
+<h5>Kurs Listeniz</h5>
+
+@foreach (var item in Model)
+{
+    count++;
+    <p>@count - @item.Course.Title</p>
+}
+

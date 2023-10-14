@@ -1,0 +1,28 @@
+﻿@model MyELearningProject.DAL.Entities.Student
+@{
+    ViewBag.Title = "BilgiGuncelle";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<h2>BilgiGuncelle</h2>
+
+
+<form method="post">
+
+    @Html.HiddenFor(x => x.StudentID, new { @class = "hidden" })
+
+    <label>Adınız </label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br /><br />
+    <label>Soyadınız</label>
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    <br /><br />
+    <label>E-mailiniz</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br /><br />
+    <label>Şifreniz</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+    <button class="btn btn-primary">Güncelle</button>
+
+</form>

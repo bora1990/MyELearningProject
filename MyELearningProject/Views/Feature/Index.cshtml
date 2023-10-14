@@ -1,0 +1,39 @@
+﻿@model List<MyELearningProject.DAL.Entities.Feature>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-block">
+                Özellik Sayfası
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>İçerik</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+
+           @foreach(var item in Model)
+            {
+                    <tr>
+                        <td>@item.FeatureID</td>
+                        <td>@item.Title</td>
+                        <td>@item.Content</td>
+
+                        <td><a href="/Feature/DeleteFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
+
+                        <td><a href="/Feature/UpdateFeature/@item.FeatureID" class="btn btn-outline-warning">Güncelle</a></td>
+                    </tr>
+
+            }                  
+                </table>
+                <a class="btn btn-success"  href="/Feature/AddFeature/">Özellik Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

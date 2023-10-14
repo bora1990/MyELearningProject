@@ -1,0 +1,31 @@
+﻿@model List<MyELearningProject.DAL.Entities.Category>
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Kategoriler</h6>
+            <h1 class="mb-5">Kurs Kategorileri</h1>
+        </div>
+     
+
+        <div class="row ">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-6">
+
+                    <a class="position-relative d-block overflow-hidden me-4 mb-4">
+                        <img  src="@item.CategoryPhoto" alt="" width="600px" height="400px" >
+                        <div class="bg-white text-center position-absolute bottom-0 end-150 " style="margin: 1px;">
+                            <h5 class="m-0">@item.CategoryName</h5>
+                            <small class="text-primary">@item.CourseCountinCategory Kurs</small>
+                        </div>
+                    </a>
+                </div>
+                    }
+
+             
+
+            </div>
+
+        </div>
+    </div>

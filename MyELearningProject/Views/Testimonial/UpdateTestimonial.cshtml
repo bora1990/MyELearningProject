@@ -1,0 +1,63 @@
+﻿@model MyELearningProject.DAL.Entities.Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    var status = Convert.ToString(Model.Status);
+}
+
+
+<h2>UpdateTestimonial</h2>
+
+<form method="post">
+    <input type="hidden" value=@(status) />
+    @Html.TextBoxFor(x => x.TestimonialID, new { style = "display: none;" })
+    <br />
+    <br />
+    <label>Ad Soyad</label>
+    <br />
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    <br />
+    <label>Başlık</label>
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Yorum</label>
+    <br />
+    @Html.TextAreaFor(x => x.Comment, new { @class = "form-control" })
+    <br />
+    <br />
+
+    <br />
+    <label>Durum</label>
+    <br />
+    <input type="checkbox" id="Status" name="Status" onchange="toggleCheckbox(this);" value=@(status) checked="@(status == "False" ? null : "True")">
+    <label for="Status">Aktif</label>
+
+    <br />
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+
+
+
+
+<script>
+
+
+
+    function toggleCheckbox(chk) {
+        const chkbx = document.getElementById("Status");
+
+        if (chkbx.value == "False") {
+            chkbx.value = "True"
+        } else {
+            chkbx.value = "False"
+        }
+}
+</script>
+
+
+
+
