@@ -39,7 +39,7 @@ namespace MyELearningProject.Controllers
 
             //select InstructorID from Instructors where Name='Ahmet' and Surname='Ölçen'
 
-            var email = Session["InstructorCurrentMaill"];
+            var email = Session["InstructorCurrentMail"];
 
             var v1 = context.Instuctors.Where(x => x.Email==email).Select(y => y.InstructorID).FirstOrDefault();
 
@@ -58,9 +58,14 @@ namespace MyELearningProject.Controllers
 
         public PartialViewResult CourseListByInstructor()
         {
-            var values=context.Courses.Where(x=>x.InstructorID==1).ToList();
+            var email = Session["InstructorCurrentMail"];
+          
+
+            var values=context.Courses.Where(x=>x.Instructor.Email== email).ToList();
             return PartialView(values);
         }
+
+
 
     }
 }

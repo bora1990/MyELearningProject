@@ -36,6 +36,8 @@ namespace MyELearningProject.DAL.Context
         public DbSet<Process> Processes { get; set; }
 
         public DbSet<Master> Masters { get; set; }
+
+    public DbSet<Video> Videos { get; set; }
  
     }
 }

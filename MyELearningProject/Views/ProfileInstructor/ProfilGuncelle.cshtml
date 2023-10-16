@@ -1,0 +1,42 @@
+﻿
+@model MyELearningProject.DAL.Entities.Instructor
+@{
+    ViewBag.Title = "ProfilGuncelle";
+    Layout = "~/Views/Shared/_InstructorLayout.cshtml";
+}
+
+
+
+<form method="post">
+    <input type="hidden" name="InstructorID" value="@Model.InstructorID" " />
+    <br />
+    <br />
+    <label for="Name"  >Eğitmen Adı</label>
+    <input type="text" name="Name" value="@Model.Name" class="form-control" id="Name"  autofocus />
+    <br />
+    <br />
+    <label for="Surname">Eğitmen Soyadı</label>
+    <input type="text" name="Surname" value="@Model.Surname" class="form-control" id="Surname" />
+    <br />
+    <br />
+    <label for="ImageUrl">Eğitmen Görseli</label>
+    <input type="text" name="ImageUrl" value="@Model.ImageUrl" class="form-control" id="ImageUrl" />
+
+    @*<div class="form-group">
+            <label>Profil Resmi Seçin</label>
+            <input type="file" asp-for="Image" />
+            <br />
+        </div>*@
+    <br />
+    <br />
+
+    <label for="Email">E-mail</label>
+    <input type="text" name="Email" value="@Model.Email" class="form-control" id="Email"  />
+    <br />
+    <br /><br />
+    <button class="btn btn-primary">Eğitmen Güncelle</button>
+
+
+    <br /><br /><br />
+
+</form>

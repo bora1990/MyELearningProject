@@ -33,6 +33,8 @@ namespace MyELearningProject.DAL.Entities
 
         public List<Process> Processes { get; set; }
 
+        public List<Video> Videos { get; set; }
+
 
     }
 }

@@ -1,0 +1,40 @@
+﻿@model List<MyELearningProject.DAL.Entities.Video>
+@{
+    ViewBag.Title = "KursVideos";
+    Layout = "~/Views/Shared/_InstructorLayout.cshtml";
+}
+@{
+    int i = 0;
+
+}
+
+<h2>Kurs Eğitimleri</h2>
+
+<div class="row">
+
+    <div class="col-12">
+        <table class="table-light">
+
+
+            <tr class="table-active">
+                <th>#</th>
+                <th style="text-align:center">Video</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                i++;
+                <tr>
+                    <td>@(i)</td>
+                    <td><iframe width="560" height="315" src="@item.Url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
+
+
+                </tr>
+            }
+
+
+        </table>
+    </div>
+
+
+</div>

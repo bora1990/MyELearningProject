@@ -15,12 +15,21 @@ namespace MyELearningProject.Controllers
 
         public ActionResult Index()
         {
-            string value = Session["StudentCurrentMail"].ToString();
-            ViewBag.mail = Session["StudentCurrentMail"];
+            string mail = Session["StudentCurrentMail"].ToString();
 
-            ViewBag.name = context.Students.Where(x => x.Email == value).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
+            int id=context.Students.Where(x=>x.Email== mail).Select(y=>y.StudentID).FirstOrDefault();
 
-            return View();
+            var value = context.Processes.Where(x => x.StudentID == id).ToList();
+
+            return View(value);
+        }
+
+        public ActionResult KursVideos(int id)
+        {
+            var values = context.Videos.Where(x => x.CourseID == id).ToList();
+
+            return View(values);
+
         }
 
         public ActionResult MyCourseList()
@@ -53,7 +62,28 @@ namespace MyELearningProject.Controllers
             v.Surname = student.Surname;
             context.SaveChanges();
 
-            return RedirectToAction("BilgiGuncelle","Profile");
+            return RedirectToAction("BilgiGuncelle", "ProfileStudent");
+        }
+
+        public ActionResult YorumYap(int id)
+        {
+            ViewBag.CourseId = id;
+            string value = Session["StudentCurrentMail"].ToString();
+
+            var studentId=context.Students.Where(x=>x.Email==value).Select(y => y.StudentID).FirstOrDefault();
+
+            ViewBag.StudentID = studentId;
+         
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YorumYap(Comment comment)
+        {
+            context.Comments.Add(comment);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
     }

@@ -139,10 +139,12 @@
     <Compile Include="Controllers\InstructorAnalysisController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ProfileStudentController.cs" />
     <Compile Include="Controllers\ProfileInstructorController.cs" />
+    <Compile Include="Controllers\ProfileStudentController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TestimonialController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="DAL\Context\ELearningContext.cs" />
     <Compile Include="DAL\Entities\About.cs" />
     <Compile Include="DAL\Entities\Address.cs" />
@@ -160,6 +162,7 @@
     <Compile Include="DAL\Entities\Review.cs" />
     <Compile Include="DAL\Entities\Student.cs" />
     <Compile Include="DAL\Entities\Testimonial.cs" />
+    <Compile Include="DAL\Entities\Video.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,6 +197,10 @@
     <Compile Include="Migrations\202310101339104_adding_master_table.cs" />
     <Compile Include="Migrations\202310101339104_adding_master_table.designer.cs">
       <DependentUpon>202310101339104_adding_master_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310151938161_adding_video_table.cs" />
+    <Compile Include="Migrations\202310151938161_adding_video_table.designer.cs">
+      <DependentUpon>202310151938161_adding_video_table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1046,16 +1053,26 @@
     <Content Include="Views\Shared\_StudentLayout.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Profile\MyCourseList.cshtml" />
-    <Content Include="Views\Profile\BilgiGuncelle.cshtml" />
     <Content Include="Views\Shared\_InstructorLayout.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\ProfileInstructor\Index.cshtml" />
     <Content Include="Views\ProfileInstructor\InstructorPanelPartial.cshtml" />
     <Content Include="Views\ProfileInstructor\CommentPartial.cshtml" />
     <Content Include="Views\ProfileInstructor\CourseListByInstructor.cshtml" />
     <Content Include="Views\Login\MasterLogin.cshtml" />
     <Content Include="Views\Login\AnaLogin.cshtml" />
     <Content Include="Views\ProfileStudent\Index.cshtml" />
+    <Content Include="Views\ProfileInstructor\ProfilGuncelle.cshtml" />
+    <Content Include="Views\ProfileInstructor\KursEkleCikar.cshtml" />
+    <Content Include="Views\ProfileInstructor\KursVideos.cshtml" />
+    <Content Include="Views\Video\VideoEkle.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\ProfileInstructor\CreateCourse.cshtml" />
+    <Content Include="Views\ProfileInstructor\UpdateCourse.cshtml" />
+    <Content Include="Views\ProfileStudent\BilgiGuncelle.cshtml" />
+    <Content Include="Views\ProfileStudent\MyCourseList.cshtml" />
+    <Content Include="Views\ProfileStudent\KursVideos.cshtml" />
+    <Content Include="Views\ProfileStudent\YorumYap.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1112,6 +1129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310101339104_adding_master_table.resx">
       <DependentUpon>202310101339104_adding_master_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310151938161_adding_video_table.resx">
+      <DependentUpon>202310151938161_adding_video_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

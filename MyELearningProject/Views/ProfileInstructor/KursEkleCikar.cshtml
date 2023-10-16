@@ -1,0 +1,47 @@
+﻿@model List<MyELearningProject.DAL.Entities.Course>
+
+@{
+    ViewBag.Title = "ProfilGuncelle";
+    Layout = "~/Views/Shared/_InstructorLayout.cshtml";
+}
+@{
+    int i = 0;
+
+}
+
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>Kurs Adı</th>
+                        <th>Fiyatı</th>
+                        <th>Kurs Kategorisi</th>
+                        <th>Uzunluğu(Ders Saati Olarak)</th>
+                        <th>Kurs Videoları</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                        <th>Ekle</th>
+
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+
+                        i++;
+
+                        <tr>
+                            <td>@(i)</td>
+                            <td>@(item.Title)</td>
+                            <td>@(item.Price)</td>
+                            <td>@(item.Category.CategoryName)</td>
+                            <td>@(item.Duration)</td>
+                            <td><a href="/ProfileInstructor/KursVideos/@item.CourseID/" class="btn btn-outline-info" >Ders Videoları</a></td>
+                            <td><a href="/ProfileInstructor/DeleteCourse/@item.CourseID/" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/ProfileInstructor/UpdateCourse/@item.CourseID/" class="btn btn-outline-warning">Güncelle</a></td>
+                            <td><a href="/ProfileInstructor/CreateCourse/" class="btn btn-outline-success">Ekle</a></td>
+
+                        </tr>
+                    }
+                </table>
+               
+      
+

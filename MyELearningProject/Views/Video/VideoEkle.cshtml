@@ -1,0 +1,20 @@
+﻿@model MyELearningProject.DAL.Entities.Video
+@{
+    ViewBag.Title = "VideoEkle";
+    Layout = "~/Views/Shared/_InstructorLayout.cshtml";
+}
+
+
+<h2>Yeni Video Ekleme</h2>
+
+<form method="post">
+    <label>Url Giriniz</label>
+    @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
+    <br /><br />
+    @Html.DropDownListFor(x => x.CourseID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+
+    <br /><br />
+
+    <button class="btn btn-primary">Kaydet</button>
+
+</form>

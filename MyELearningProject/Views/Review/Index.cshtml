@@ -1,0 +1,28 @@
+﻿@model MyELearningProject.DAL.Entities.Review
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<form method="post">
+
+    <input name="StudentID" value="@ViewBag.Id" hidden />
+
+    @Html.DropDownListFor(x => x.CourseID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+    <br />
+    <label for="a">Puan Veriniz</label>
+    <br />
+    <select name="ReviewScore" id="a">
+        <option value="">--Please choose an option--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+
+    </select>
+    <button>Gönder</button>
+
+</form>
