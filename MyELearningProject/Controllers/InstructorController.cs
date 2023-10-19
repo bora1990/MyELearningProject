@@ -14,6 +14,9 @@ namespace MyELearningProject.Controllers
 
         public ActionResult Index()
         {
+
+
+
             var values=context.Instuctors.ToList();
             return View(values);
         }

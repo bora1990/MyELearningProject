@@ -8,7 +8,7 @@
 <h2>Yeni Video Ekleme</h2>
 
 <form method="post">
-    <label>Url Giriniz</label>
+    <label>Lütfen eklemek istediğiniz embed(source) kaynağını giriniz.(Youtube,DailyMotion)</label>
     @Html.TextBoxFor(x => x.Url, new { @class = "form-control" })
     <br /><br />
     @Html.DropDownListFor(x => x.CourseID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })

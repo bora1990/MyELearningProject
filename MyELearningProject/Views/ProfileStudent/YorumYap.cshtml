@@ -14,9 +14,12 @@
         <input type="hidden" id="StudentID" placeholder="" name="StudentID" value="@ViewBag.StudentID" required />
 
         <input type="hidden" id="CommentDate" placeholder="" name="CommentDate" value="@DateTime.Now.ToShortTimeString()" required />
-
-        <textarea id="CommentText" placeholder="Yorum" name="CommentText"></textarea>
-        <input type="submit" value="Gönder" />
+        <br />
+        <label>İlgili Derse Yorumunuz</label>
+        <br />
+        <textarea id="CommentText" placeholder="Yorum" name="CommentText" rows="4" cols="80"></textarea>
+        <br />
+        <input type="submit" value="Gönder" class="btn btn-primary" />
     </form>
 </div>
 

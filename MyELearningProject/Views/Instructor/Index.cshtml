@@ -17,8 +17,8 @@
                         <th>Eğitmen Adı Soyadı</th>
                         <th>Sil</th>
                         <th>Güncelle</th>
-                        <th>Kurslar</th>
-                        <th>Sitede Gör</th>
+                    
+                   
                     </tr>
                     @foreach (var item in Model)
                     {
@@ -32,10 +32,8 @@
 
                             <td><a href="/Instructor/UpdateInstructor/@item.InstructorID" class="btn btn-outline-warning">Güncelle</a></td>
 
-                            <td><a href="/Instructor/#/@item.InstructorID" class="btn btn-outline-success">Kurslar</a></td>
+                       </tr>
 
-                            <td><a href="/Instructor/#/@item.InstructorID" class="btn btn-outline-dark">Detaylar</a></td>
-                        </tr>
                     }
                 </table>
                 <a href="/Instructor/AddInstructor/" class="btn btn-outline-primary">Yeni Eğitmen Girişi</a>

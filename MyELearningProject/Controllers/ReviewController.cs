@@ -19,14 +19,19 @@ namespace MyELearningProject.Controllers
             var id=context.Students.Where(x=>x.Email== value).Select(x=>x.StudentID).FirstOrDefault();
 
             ViewBag.Id = id;
+            var courseIds = context.Processes.Where(x=>x.StudentID== id).ToList().Select(y => y.CourseID);
+            List<SelectListItem> courses = new List<SelectListItem>();
 
+            foreach (var courseId in courseIds)
+            {
+                var course = context.Courses.FirstOrDefault(c => c.CourseID == courseId);
+                courses.Add(new SelectListItem
+                {
+                    Text = course.Title,
+                    Value = course.CourseID.ToString()
+                });
+            }
 
-            List<SelectListItem> courses = (from x in context.Courses.ToList()
-                                               select new SelectListItem
-                                               {
-                                                   Text = x.Title,
-                                                   Value = x.CourseID.ToString()
-                                               }).ToList();
             ViewBag.v = courses;
 
             return View();
@@ -38,7 +43,7 @@ namespace MyELearningProject.Controllers
         {
             context.Reviews.Add(review);
             context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","ProfileStudent");
 
         }
     }

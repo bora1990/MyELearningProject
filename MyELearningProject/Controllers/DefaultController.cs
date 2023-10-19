@@ -57,6 +57,26 @@ namespace MyELearningProject.Controllers
 
         public PartialViewResult PartialCourse()
         {
+            var starAverage0=context.Reviews.Where(x=>x.CourseID==29).Select(x=>x.ReviewScore).Average();
+
+            ViewBag.starCount0=starAverage0;
+
+            var starAverage1 = context.Reviews.Where(x => x.CourseID == 30).Select(x => x.ReviewScore).Average();
+
+            ViewBag.starCount1 = starAverage1;
+
+            var starAverage2 = context.Reviews.Where(x => x.CourseID == 31).Select(x => x.ReviewScore).Average();
+
+            ViewBag.starCount2 = starAverage2;
+
+
+
+
+            var countReviewUniqueStudents=context.Reviews.Select(x=>x.StudentID).Distinct().Count();
+
+            ViewBag.count = countReviewUniqueStudents;
+
+
             var values= context.Courses.Take(3).ToList();
 
             return PartialView(values);

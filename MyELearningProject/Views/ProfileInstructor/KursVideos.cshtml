@@ -1,7 +1,7 @@
 ﻿@model List<MyELearningProject.DAL.Entities.Video> 
 @{
     ViewBag.Title = "KursVideos";
-    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+    Layout = "~/Views/Shared/_InstructorLayout.cshtml";
 }
 @{
     int i = 0;
@@ -19,6 +19,7 @@
             <tr class="table-active">
                 <th>#</th>
                 <th style="text-align:center">Video</th>
+                <th>Sil</th>
 
             </tr>
             @foreach (var item in Model)
@@ -27,7 +28,7 @@
                 <tr>
                     <td>@(i)</td>
                     <td><iframe width="560" height="315" src="@item.Url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td>
-
+                    <td><a href="/Video/VideoSil/@item.VideoID/" class="btn btn-warning">Sil</a></td>
 
                 </tr>
             }
@@ -35,10 +36,11 @@
 
         </table>
     </div>
+    
 
     <div class="col-4">
 
-           <a href="/Video/VideoEkle/" role="button" class="btn btn-outline-info">Eklemek istediğiniz Url'yi giriniz.</a>
+           <a href="/Video/VideoEkle/" role="button" class="btn btn-outline-info">Derse Video Ekleyiniz</a>
 
     </div>
 

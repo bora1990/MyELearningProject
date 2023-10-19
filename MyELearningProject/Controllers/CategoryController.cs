@@ -30,7 +30,7 @@ namespace MyELearningProject.Controllers
         {
             context.Categories.Add(category);   
             context.SaveChanges();
-            return RedirectToAction("Index","ProfileInstructor");
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteCategory(int id)
