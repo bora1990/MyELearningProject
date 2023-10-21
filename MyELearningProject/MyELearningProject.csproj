@@ -1073,6 +1073,7 @@
     <Content Include="Views\ProfileStudent\KursVideos.cshtml" />
     <Content Include="Views\ProfileStudent\YorumYap.cshtml" />
     <Content Include="Views\Review\Index.cshtml" />
+    <Content Include="Views\Contact\PartialContactLeft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

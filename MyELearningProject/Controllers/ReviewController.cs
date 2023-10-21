@@ -19,7 +19,7 @@ namespace MyELearningProject.Controllers
             var id=context.Students.Where(x=>x.Email== value).Select(x=>x.StudentID).FirstOrDefault();
 
             ViewBag.Id = id;
-            var courseIds = context.Processes.Where(x=>x.StudentID== id).ToList().Select(y => y.CourseID);
+            var courseIds = context.Processes.Where(x=>x.StudentID== id).Select(y => y.CourseID).ToList();
             List<SelectListItem> courses = new List<SelectListItem>();
 
             foreach (var courseId in courseIds)
